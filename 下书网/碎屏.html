@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<title>微信抢红包</title>
+<link rel="stylesheet" href="css/fake.css" /><script type="text/javascript" src="http://www.81hn.com/public/assets/hongbao/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.js"></script>
+</head>
+<style type="text/css">
+.body{min-height:100%;}
+.body::after{background:#000 no-repeat center center;background-size:100% auto;}
+</style>
+<script type="text/javascript">
+  var count = 0;
+  var a = "哈哈哈";
+  $("document").ready(function(){
+    $('.crush').click(function(e){
+    // $('.audio')[count%3].play();
+    $(this).attr("style","background:rgba(0,0,0,.5);");
+    $(this).append('<img style="left:'+e.pageX+'px;top:'+e.pageY+'px" src="http://www.81hn.com/public/assets/hongbao/crush'+(count%3)+'.png" />');
+    count ++;
+    if(count == 3){
+      setTimeout("prompt()",1000); 
+    }
+  });
+  })
+  
+
+  function prompt(){
+    $('body').append("<div class='prompt'>"+
+      "<div class='cont' style='padding-bottom:20px;'>"+
+        "<div class='space_30'></div>"+
+        "<p>哈哈！臭猪是个坏蛋！</p>"+
+        "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——"+a+"</p>"+
+        "<div class='space_30'></div>"+
+        "<a class='btn' onclick='remove2()' style='cursor:pointer'>关闭</a>"+
+      "</div>"+
+      "<div class='bg'></div>"+
+    "</div>");
+  }
+  function remove2(){
+    $(".prompt").remove();
+  }
+  
+</script>
+<body>
+  <div class="row">
+    <div class="body col-12-md">
+      <div class="crush carousel-inner img-responsive img-rounded"></div>
+      <dl class="main">
+        <dt>给你发了一个红包</dt>
+        <dd><img src="img/packet.png" /></dd>
+      </dl>
+    </div>
+  </div>
+    <!--统计代码-->
+</body>
+
+
+  <input type="hidden" id="urltype" value="1"/>
+  <input type="hidden" id="followurl" value=""/>
+
+</html>
